@@ -12,11 +12,11 @@ class Main extends Start {
 		super.onInit();
 		// 代码初始化入口
 		var text = new ZLabel();
-		text.dataProvider = "Hello World";
 		text.setFontSize(60);
 		text.hAlign = CENTER;
 		text.vAlign = CENTER;
 		text.width = 500;
+        text.dataProvider = "Hello World";
 		this.addChild(text);
 		text.x = (getStageWidth() - text.width) / 2;
 		text.y = (getStageHeight() - text.height) / 2;
