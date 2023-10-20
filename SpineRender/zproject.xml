@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="SpineRender" package="com.sample.spinerender" version="1.0.0" company="Company Name" />
+	<app main="Main" path="Export" file="SpineRender" />
+	
+	<source path="Source" />
+
+	<define name="spine3.8"/>
+	
+	<haxelib name="zygameui" />
+	
+	<assets path="Assets" rename="assets" />
+	
+</project>

@@ -6,3 +6,4 @@
 - BunnyMark-ImageBatchs 使用ImageBatchs+精灵图渲染好多的兔子
 - TextureAtlas 精灵图的基础使用
 - BitmapFont 使用精灵图渲染位图字
+- SpineRender 使用Spine骨骼动画渲染
