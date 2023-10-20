@@ -3,3 +3,4 @@
 - ImageBase2D 图片2D渲染
 - AssetsUtils 资源加载基础
 - FrameEvent 帧事件管理
+- BunnyMark-ImageBatchs 使用ImageBatchs+精灵图渲染好多的兔子
