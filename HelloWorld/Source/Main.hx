@@ -16,8 +16,8 @@ class Main extends Start {
 		text.hAlign = CENTER;
 		text.vAlign = CENTER;
 		text.width = 500;
-        text.dataProvider = "Hello World";
 		this.addChild(text);
+        text.dataProvider = "Hello World";
 		text.x = (getStageWidth() - text.width) / 2;
 		text.y = (getStageHeight() - text.height) / 2;
 	}
