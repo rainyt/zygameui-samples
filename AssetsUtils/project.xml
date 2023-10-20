@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project><define name="zybuild"/><define name="html5-platform"/>
+	
+	<meta title="AssetsUtils" package="com.sample.assetsutils" version="1.0.0" company="Company Name"/>
+	<app main="Main" path="Export" file="AssetsUtils"/>
+	
+	<source path="Source"/>
+	
+	<haxelib name="zygameui"/>
+	
+	<!-- 取消嵌入，使用ZAssets加载 -->
+	<assets path="Assets" rename="assets" embed="false"/>
+	
+</project>
