@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="BitmapFont" package="com.sample.bitmapfont" version="1.0.0" company="Company Name" />
+	<app main="Main" path="Export" file="BitmapFont" />
+	
+	<source path="Source" />
+	
+	<haxelib name="zygameui" />
+	
+	<assets path="Assets" rename="assets" />
+	
+</project>
