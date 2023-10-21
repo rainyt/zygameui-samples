@@ -1,10 +1,10 @@
 package;
 
+import zygame.components.ZLabel;
+import zygame.display.batch.QuadsBatchs;
 import zygame.core.Start;
 import zygame.utils.load.TextureLoader.TextureAtlas;
 import zygame.display.batch.ImageBatchs;
-import lime.ui.Gamepad;
-import lime.ui.GamepadButton;
 import openfl.display.Tileset;
 import openfl.events.Event;
 import openfl.events.MouseEvent;
@@ -23,6 +23,11 @@ class Main extends Start {
 	var tilemap:ImageBatchs;
 	var atlas:TextureAtlas;
 
+	/**
+	 * 这是使用Sprite渲染ImageBatchs的类型，如果ImageBatchs本身不会动的情况下，可以使用它减少渲染损耗
+	 */
+	var batchSprite:QuadsBatchs;
+
 	public function new() {
 		super(1920, 1080, false);
 
@@ -40,16 +45,24 @@ class Main extends Start {
 		tilemap = new ImageBatchs(atlas);
 		this.addChild(tilemap);
 
+		batchSprite = new QuadsBatchs();
+		this.addChild(batchSprite);
+
+		var label:ZLabel = new ZLabel();
+		label.setFontColor(0xffffff);
+		label.dataProvider = "点击我拍照";
+		label.stroke(0x0, 1);
+		this.addChild(label);
+		label.width = 300;
+		label.addEventListener(MouseEvent.CLICK, (e) -> {
+			// 拍照
+			batchSprite.drawImageBatch(this.tilemap);
+		});
+
 		stage.addEventListener(MouseEvent.MOUSE_DOWN, stage_onMouseDown);
 		stage.addEventListener(MouseEvent.MOUSE_UP, stage_onMouseUp);
 		stage.addEventListener(Event.ENTER_FRAME, stage_onEnterFrame);
 		stage.addEventListener(Event.RESIZE, stage_onResize);
-
-		Gamepad.onConnect.add(gamepad_onConnect);
-
-		for (gamepad in Gamepad.devices) {
-			gamepad_onConnect(gamepad);
-		}
 
 		var count = #if bunnies Std.parseInt(haxe.macro.Compiler.getDefine("bunnies")) #else 100 #end;
 
@@ -67,22 +80,6 @@ class Main extends Start {
 		bunny.speedY = (Math.random() * 5) - 2.5;
 		bunnies.push(bunny);
 		tilemap.addChild(bunny);
-	}
-
-	// Event Handlers
-
-	private function gamepad_onButtonDown(button:GamepadButton):Void {
-		addingBunnies = true;
-	}
-
-	private function gamepad_onButtonUp(button:GamepadButton):Void {
-		addingBunnies = false;
-		trace(bunnies.length + " bunnies");
-	}
-
-	private function gamepad_onConnect(gamepad:Gamepad):Void {
-		gamepad.onButtonDown.add(gamepad_onButtonDown);
-		gamepad.onButtonUp.add(gamepad_onButtonUp);
 	}
 
 	private function stage_onEnterFrame(event:Event):Void {
@@ -124,6 +121,9 @@ class Main extends Start {
 	}
 
 	private function stage_onMouseDown(event:MouseEvent):Void {
+		if (event.target is ZLabel) {
+			return;
+		}
 		addingBunnies = true;
 	}
 
@@ -133,9 +133,10 @@ class Main extends Start {
 	}
 
 	private function stage_onResize(event:Event):Void {
-		maxX = Std.int(getStageWidth());
-		maxY = Std.int(getStageHeight());
-		tilemap.width = getStageWidth();
-		tilemap.height = getStageHeight();
+		maxX = Std.int(getStageWidth() * 0.5);
+		maxY = Std.int(getStageHeight() * 0.5);
+		tilemap.width = maxX;
+		tilemap.height = maxY;
+		batchSprite.x = maxX;
 	}
 }
