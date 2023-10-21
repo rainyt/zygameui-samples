@@ -9,3 +9,4 @@
 - SpineRender 使用Spine骨骼动画渲染
 - Mp3OggSound 音频的基础使用
 - ContainerBox 基础容器使用
+- BatchContainerBox 基础批处理容器使用
