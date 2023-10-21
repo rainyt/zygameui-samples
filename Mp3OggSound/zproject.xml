@@ -12,7 +12,7 @@
 	<!-- 普通目标使用 -->
 	<assets path="Assets" rename="assets" embed="false" exclude="*.ogg" unless="cpp" />
 	<!-- 原生C++目标使用，通过预处理，将MP3资源转换成OGG -->
-	<prebuild cmd="make build_ogg" if="cpp"/>
+	<prebuild cmd="haxelib run zygameui -ogg Assets" if="cpp"/>
 	<assets path="Assets" rename="assets" embed="false" exclude="*.mp3" if="cpp" />
 
 </project>
