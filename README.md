@@ -10,3 +10,4 @@
 - Mp3OggSound 音频的基础使用
 - ContainerBox 基础容器使用
 - BatchContainerBox 基础批处理容器使用
+- BundleZip 使用Zip进行一次性加载资源
