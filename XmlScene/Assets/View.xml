@@ -1,0 +1,4 @@
+<ZBox width="100%" height="100%">
+    <ZQuad left="10" right="10" top="10" bottom="10" color="0x0033ff" />
+    <ZButton id="button" src="img" left="30" top="30" />
+</ZBox>
