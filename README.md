@@ -12,3 +12,4 @@
 - BatchContainerBox 基础批处理容器使用
 - BundleZip 使用Zip进行一次性加载资源
 - XmlScene 使用自动构造宏+XML配置，创建界面（xml配置，可搭配ZIde进行构造）
+- SaveData 本地储存数据的基础使用
