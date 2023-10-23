@@ -15,3 +15,4 @@
 - SaveData 本地储存数据的基础使用
 - Particles GPU粒子渲染
 - TouchImageBatch-TouchEvent Tilemap批处理容器点击事件处理
+- CustomLoader 自定义加载器（加载JSON格式的精灵图）
