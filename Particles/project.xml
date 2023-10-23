@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="Particles" package="com.sample.particles" version="1.0.0" company="Company Name" />
+	<app main="Main" path="Export" file="Particles" />
+	
+	<source path="Source" />
+	
+	<haxelib name="openfl" />
+
+	<haxelib name="zygameui" />
+	
+	<assets path="Assets" rename="assets" embed="false" />
+	
+</project>
