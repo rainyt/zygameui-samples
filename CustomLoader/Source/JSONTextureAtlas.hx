@@ -49,7 +49,23 @@ class JSONTextureAtlas extends ParserBase {
 		var xml = Xml.createDocument();
 		var root = Xml.createElement("TextureAtlas");
 		xml.addChild(root);
+		// 由于JSON无序的原因，这里需要排序
 		var frames = Reflect.fields(json.frames);
+		frames.sort((v, v2) -> {
+			for (i in 0...v.length) {
+				if (i > v2.length) {
+					return -1;
+				} else {
+					var a1:Int = v.charCodeAt(i);
+					var a2:Int = v2.charCodeAt(i);
+					if (a1 > a2)
+						return 1;
+					else if (a1 < a2)
+						return -1;
+				}
+			}
+			return -1;
+		});
 		for (key in frames) {
 			var value:JSONTextureAtlasFrame = Reflect.getProperty(json.frames, key);
 			var tile:Xml = Xml.createElement("frame");

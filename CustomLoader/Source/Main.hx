@@ -13,6 +13,8 @@ class Main extends Start {
 		super(1920, 1080, false);
 	}
 
+	private var animate:ZAnimation;
+
 	override function onInit() {
 		super.onInit();
 		// 代码初始化入口
@@ -31,8 +33,8 @@ class Main extends Start {
 				this.addChild(img);
 				img.y = 300;
 
-                // 帧动画处理
-				var animate = new ZAnimation();
+				// 帧动画处理
+				animate = new ZAnimation();
 				var data = new AnimationData(60);
 				data.addFrames(assets.getTextureAtlas("run_format_JSON").getBitmapDataFrames("run"));
 				animate.dataProvider = data;
@@ -43,5 +45,13 @@ class Main extends Start {
 			}
 		});
 		ZBuilder.bindAssets(assets);
+
+		this.setFrameEvent(true);
+	}
+
+	override function onFrame() {
+		super.onFrame();
+		if (animate != null)
+			animate.x++;
 	}
 }

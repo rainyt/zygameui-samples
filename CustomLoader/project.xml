@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project><define name="zybuild"/><define name="mac"/>
+<project><define name="zybuild"/><define name="html5-platform"/>
 	
 	<meta title="CustomLoader" package="com.sample.customloader" version="1.0.0" company="Company Name"/>
 	<app main="Main" path="Export" file="CustomLoader"/>
