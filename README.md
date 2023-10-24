@@ -16,3 +16,7 @@
 - Particles GPU粒子渲染
 - TouchImageBatch-TouchEvent Tilemap批处理容器点击事件处理
 - CustomLoader 自定义加载器（加载JSON格式的精灵图）
+
+# 发展
+在`develop`目录下，包含了一些新的实现例子，为引擎促进性能。
+- ZImage_v2 尝试使用Sprite渲染现在所有位图，不再使用Tilemap渲染方式，改进性能
