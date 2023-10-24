@@ -14,6 +14,10 @@ class JSONTextureAtlas extends ParserBase {
 
 	private var _json:Dynamic;
 
+	public function new(data:JSONTextureAtlasLoadData) {
+		super(data);
+	}
+
 	override function process() {
 		switch _step {
 			case 0:
@@ -97,4 +101,9 @@ typedef JSONTextureAtlasFrame = {
 	sourceSize:{
 		w:Float, h:Float
 	}
+}
+
+typedef JSONTextureAtlasLoadData = {
+	path:String,
+	json:String
 }
