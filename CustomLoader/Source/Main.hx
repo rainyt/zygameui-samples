@@ -21,10 +21,7 @@ class Main extends Start {
 		// 创建新的加载分析器
 		LoaderAssets.fileparser.push(JSONTextureAtlas);
 		var assets = new ZAssets();
-		assets.loadFile(new JSONTextureAtlas({
-			path: "assets/run_format_JSON.png",
-			json: "assets/run_format_JSON.json"
-		}));
+		assets.loadFile(new JSONTextureAtlas("assets/run_format_JSON.png", "assets/run_format_JSON.json"));
 		assets.start((f) -> {
 			if (f == 1) {
 				// 解析成功

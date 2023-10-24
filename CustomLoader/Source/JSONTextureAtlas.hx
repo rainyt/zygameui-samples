@@ -14,7 +14,11 @@ class JSONTextureAtlas extends ParserBase {
 
 	private var _json:Dynamic;
 
-	public function new(data:JSONTextureAtlasLoadData) {
+	public function new(pngPath:String, jsonPath:String) {
+		var data:JSONTextureAtlasLoadData = {
+			path: pngPath,
+			json: jsonPath
+		};
 		super(data);
 	}
 
