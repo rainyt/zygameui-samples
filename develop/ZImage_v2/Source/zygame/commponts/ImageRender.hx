@@ -1,16 +1,15 @@
 package zygame.commponts;
 
+import openfl.display.Shape;
 import openfl.geom.Matrix;
-import openfl.geom.Rectangle;
 import openfl.Vector;
 import zygame.utils.load.Frame;
 import openfl.display.BitmapData;
-import openfl.display.Sprite;
 
 /**
  * 图片渲染器
  */
-class ImageRender extends Sprite {
+class ImageRender extends Shape {
 	private var __isS9Draw:Bool = false;
 
 	private var __width:Null<Float> = null;

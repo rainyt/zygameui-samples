@@ -23,6 +23,7 @@ class Main extends Start {
 				this.addChild(img);
 				img.dataProvider = "img";
 				img.width = 400;
+                img.alignPivot();
 				// 精灵图
 				var img2 = new ZImage_v2();
 				this.addChild(img2);
