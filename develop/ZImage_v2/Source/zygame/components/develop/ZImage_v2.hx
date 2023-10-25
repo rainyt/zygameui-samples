@@ -1,4 +1,4 @@
-package zygame.commponts;
+package zygame.components.develop;
 
 import openfl.display.Shader;
 import openfl.geom.Rectangle;

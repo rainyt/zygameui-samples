@@ -1,5 +1,7 @@
-package zygame.commponts;
+package zygame.components.develop;
 
+import openfl.geom.Point;
+import openfl.display.DisplayObject;
 import openfl.display.GraphicsShader;
 import openfl.display.Shape;
 import openfl.geom.Matrix;
@@ -227,5 +229,23 @@ class ImageRender extends Shape {
 			return value;
 		}
 		return super.set_height(value);
+	}
+
+	/**
+	 * 重写触摸事件，用于实现在TouchImageBatchsContainer状态中，允许穿透点击
+	 * @param x 
+	 * @param y 
+	 * @param shapeFlag 
+	 * @param stack 
+	 * @param interactiveOnly 
+	 * @param hitObject 
+	 * @return Bool
+	 */
+	override private function __hitTest(x:Float, y:Float, shapeFlag:Bool, stack:Array<DisplayObject>, interactiveOnly:Bool, hitObject:DisplayObject):Bool {
+		var pos = this.globalToLocal(new Point(x,y));
+		if (this.getBounds(this.parent).contains(pos.x, pos.y)) {
+			return true;
+		}
+		return false;
 	}
 }

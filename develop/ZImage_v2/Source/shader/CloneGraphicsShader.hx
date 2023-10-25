@@ -1,4 +1,4 @@
-package zygame.commponts;
+package zygame.shader;
 
 import openfl.display.Shader;
 import openfl.display.GraphicsShader;

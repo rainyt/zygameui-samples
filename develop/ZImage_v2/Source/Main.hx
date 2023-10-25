@@ -1,11 +1,10 @@
 package;
 
 import shader.GeryGraphicsShader;
-import zygame.shader.GeryShader;
 import zygame.components.ZImage;
 import motion.Actuate;
 import zygame.components.ZBuilder;
-import zygame.commponts.ZImage_v2;
+import zygame.components.develop.ZImage_v2;
 import zygame.utils.ZAssets;
 import zygame.core.Start;
 
