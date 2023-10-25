@@ -1,5 +1,6 @@
 package zygame.commponts;
 
+import openfl.display.GraphicsShader;
 import openfl.display.Shape;
 import openfl.geom.Matrix;
 import openfl.Vector;
@@ -18,6 +19,24 @@ class ImageRender extends Shape {
 
 	private var __data:Dynamic;
 
+	public var smoothing:Bool = true;
+
+	private function __beginBitmapFill(data:BitmapData):Void {
+		if (this.shader != null && shader is GraphicsShader) {
+			// var gShader = new CloneGraphicsShader(this.shader);
+			// gShader.data = this.shader.data;
+			// if (gShader.bitmap != null)
+			// if (gShader.data.openfl_Texture != null)
+			// 	gShader.data.openfl_Texture.input = data;
+			var graphicsShader = cast(shader, GraphicsShader);
+			graphicsShader.bitmap.input = data;
+			graphicsShader.bitmap.filter = __isS9Draw ? NEAREST : (this.smoothing ? LINEAR : NEAREST);
+			this.graphics.beginShaderFill(shader);
+		} else {
+			this.graphics.beginBitmapFill(data, null, true, __isS9Draw ? false : this.smoothing);
+		}
+	}
+
 	public function draw(data:Dynamic, width:Null<Float>, height:Null<Float>):Void {
 		this.graphics.clear();
 		__isS9Draw = false;
@@ -26,14 +45,14 @@ class ImageRender extends Shape {
 		__data = data;
 		if (data is BitmapData) {
 			var bitmap:BitmapData = data;
-			this.graphics.beginBitmapFill(data, null, true, true);
+			__beginBitmapFill(data);
 			this.graphics.drawQuads(new Vector(4, false, [0., 0., bitmap.width, bitmap.height]));
 		} else if (data is Frame) {
 			this.scaleX = this.scaleY = 1;
 			var frame:Frame = data;
 			if (frame.scale9frames != null) {
-				this.graphics.beginBitmapFill(frame.parent.getRootBitmapData(), null, true, false);
 				__isS9Draw = true;
+				__beginBitmapFill(frame.parent.getRootBitmapData());
 				// 九图渲染
 				var quads:Vector<Float> = new Vector();
 				var transform:Vector<Float> = new Vector();
@@ -177,7 +196,7 @@ class ImageRender extends Shape {
 				}
 				this.graphics.drawQuads(quads, null, transform);
 			} else {
-				this.graphics.beginBitmapFill(frame.parent.getRootBitmapData(), null, true, true);
+				__beginBitmapFill(frame.parent.getRootBitmapData());
 				var m = this.transform.matrix;
 				this.graphics.drawQuads(new Vector(4, false, [frame.x, frame.y, frame.width, frame.height]), null,
 					new Vector(6, false, [m.a, m.b, m.c, m.d, m.tx, m.ty]));
