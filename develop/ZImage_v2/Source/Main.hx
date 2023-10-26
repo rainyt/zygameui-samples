@@ -1,5 +1,7 @@
 package;
 
+import openfl.geom.Rectangle;
+import openfl.display.Bitmap;
 import zygame.shader.GeryShader;
 import zygame.components.ZButton;
 import shader.GeryGraphicsShader;
@@ -55,7 +57,7 @@ class Main extends Start {
 				var img2 = new ZImage_v2();
 				this.addChild(img2);
 				img2.y = 500;
-				// img2.scaleWidth = img2.scaleHeight = 500;
+				img2.scaleWidth = img2.scaleHeight = 500;
 				img2.dataProvider = "CommonAtlas:BiaoTiDi";
 				img2.shader = GeryShader.shader;
 
@@ -72,6 +74,22 @@ class Main extends Start {
 				img3.dataProvider = "CommonAtlas:s9_bg";
 				img3.width = 900;
 				img3.height = 100;
+
+				var bitmap:Bitmap = new Bitmap(assets.getBitmapData("img"));
+				this.addChild(bitmap);
+				bitmap.x = bitmap.y = 500;
+				bitmap.scrollRect = new Rectangle(0, 0, 50, 50);
+				trace("Current size:", bitmap.width, bitmap.height); // 50x50
+				bitmap.scaleX = 2;
+				bitmap.scaleY = 2;
+				trace("Current size:", bitmap.width, bitmap.height); // 100x100
+				bitmap.width = 200;
+				bitmap.height = 200;
+				trace("Current size:", bitmap.width, bitmap.height); // 200x200
+				trace("Current scale:", bitmap.scaleX, bitmap.scaleY); // 4,4
+				bitmap.scrollRect = new Rectangle(0, 0, 150, 150);
+				trace("Current size:", bitmap.width, bitmap.height); // 600x600
+				trace("Current scale:", bitmap.scaleX, bitmap.scaleY); // 4,4
 			}
 		});
 		ZBuilder.bindAssets(assets);
