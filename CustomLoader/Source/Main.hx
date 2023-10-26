@@ -48,7 +48,7 @@ class Main extends Start {
 
 	override function onFrame() {
 		super.onFrame();
-		if (animate != null)
-			animate.x++;
+		// if (animate != null)
+		// animate.x++;
 	}
 }

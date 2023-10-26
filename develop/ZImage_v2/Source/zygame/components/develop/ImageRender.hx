@@ -64,8 +64,8 @@ class ImageRender extends Shape {
 				var leftbottom = frame.scale9frames[6];
 				var rightbottom = frame.scale9frames[8];
 				var center = frame.scale9frames[4];
-				var wScale = (width - lefttop.width - righttop.width) / center.width;
-				var hScale = (height - lefttop.height - leftbottom.height) / center.height;
+				var wScale = Math.abs((width - lefttop.width - righttop.width) / center.width);
+				var hScale = Math.abs((height - lefttop.height - leftbottom.height) / center.height);
 				for (index => pFrame in frame.scale9frames) {
 					switch index {
 						case 0:
@@ -242,7 +242,7 @@ class ImageRender extends Shape {
 	 * @return Bool
 	 */
 	override private function __hitTest(x:Float, y:Float, shapeFlag:Bool, stack:Array<DisplayObject>, interactiveOnly:Bool, hitObject:DisplayObject):Bool {
-		var pos = this.globalToLocal(new Point(x,y));
+		var pos = this.globalToLocal(new Point(x, y));
 		if (this.getBounds(this.parent).contains(pos.x, pos.y)) {
 			return true;
 		}

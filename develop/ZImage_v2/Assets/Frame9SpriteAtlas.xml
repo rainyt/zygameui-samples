@@ -1,0 +1,1 @@
+<TextureAtlas build="Use zyeditui create."><SubTexture name="icon" height="485" width="481" y="1" x="1"/><SubTexture name="s9_frame" height="52" slice9="27 27 26 27" width="52" y="488" x="1"/><SubTexture name="line" frameY="0" height="2" frameHeight="6" frameX="-1" width="904" y="542" frameWidth="908" x="1"/></TextureAtlas>

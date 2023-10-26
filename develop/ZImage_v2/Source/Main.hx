@@ -1,5 +1,6 @@
 package;
 
+import zygame.components.ZBuilderScene;
 import openfl.geom.Rectangle;
 import openfl.display.Bitmap;
 import zygame.shader.GeryShader;
@@ -23,6 +24,7 @@ class Main extends Start {
 		var assets = new ZAssets();
 		assets.loadFile("assets/img.png");
 		assets.loadTextures("assets/CommonAtlas.png", "assets/CommonAtlas.xml");
+		assets.loadTextures("assets/Frame9SpriteAtlas.png", "assets/Frame9SpriteAtlas.xml");
 		assets.start((f) -> {
 			if (f == 1) {
 				// 精灵图九图
@@ -90,6 +92,10 @@ class Main extends Start {
 				bitmap.scrollRect = new Rectangle(0, 0, 150, 150);
 				trace("Current size:", bitmap.width, bitmap.height); // 600x600
 				trace("Current scale:", bitmap.scaleX, bitmap.scaleY); // 4,4
+
+				// 测试
+				var s9scene = new ZBuilderScene("assets/S9FrameBg.xml");
+				this.addChild(s9scene);
 			}
 		});
 		ZBuilder.bindAssets(assets);

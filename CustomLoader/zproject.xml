@@ -10,4 +10,5 @@
 	
 	<assets path="Assets" rename="assets" />
 	
+	<haxedef name="zimage_v2"/>
 </project>
