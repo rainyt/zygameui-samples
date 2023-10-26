@@ -1,5 +1,6 @@
 package;
 
+import zygame.shader.GeryShader;
 import zygame.components.ZButton;
 import shader.GeryGraphicsShader;
 import zygame.components.ZImage;
@@ -54,9 +55,9 @@ class Main extends Start {
 				var img2 = new ZImage_v2();
 				this.addChild(img2);
 				img2.y = 500;
-				img2.scaleWidth = img2.scaleHeight = 500;
+				// img2.scaleWidth = img2.scaleHeight = 500;
 				img2.dataProvider = "CommonAtlas:BiaoTiDi";
-				img2.shader = new GeryGraphicsShader();
+				img2.shader = GeryShader.shader;
 
 				// 按钮
 				var button:ZButton = ZButton.createButton("CommonAtlas:s9_bg");
