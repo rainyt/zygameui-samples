@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
-	
+
 	<meta title="ZImageV2" package="com.sample.zimagev2" version="1.0.0" company="Company Name" />
 	<app main="Main" path="Export" file="ZImageV2" />
-	
+
 	<source path="Source" />
-	
+
 	<haxelib name="zygameui" />
-	
+
 	<assets path="Assets" rename="assets" />
-	
+
+	<!-- TODO zimage_v2不够稳定 -->
+	<haxedef name="zimage_v2" />
+	<!-- 微信需要这个兼容IOS -->
+	<haxedef name="zimage_v2_bitmap_draw" />
+
 </project>

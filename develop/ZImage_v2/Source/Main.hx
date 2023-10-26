@@ -1,10 +1,11 @@
 package;
 
+import zygame.components.ZButton;
 import shader.GeryGraphicsShader;
 import zygame.components.ZImage;
 import motion.Actuate;
 import zygame.components.ZBuilder;
-import zygame.components.develop.ZImage_v2;
+import zygame.components.ZImage_v2;
 import zygame.utils.ZAssets;
 import zygame.core.Start;
 
@@ -55,7 +56,21 @@ class Main extends Start {
 				img2.y = 500;
 				img2.scaleWidth = img2.scaleHeight = 500;
 				img2.dataProvider = "CommonAtlas:BiaoTiDi";
-                img2.shader = new GeryGraphicsShader();
+				img2.shader = new GeryGraphicsShader();
+
+				// 按钮
+				var button:ZButton = ZButton.createButton("CommonAtlas:s9_bg");
+				this.addChild(button);
+				button.x = 300;
+				button.y = 400;
+				button.width = 300;
+				button.height = 300;
+
+				var img3 = new ZImage_v2();
+				this.addChild(img3);
+				img3.dataProvider = "CommonAtlas:s9_bg";
+				img3.width = 900;
+				img3.height = 100;
 			}
 		});
 		ZBuilder.bindAssets(assets);
