@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+
+	<meta title="MiniGame" package="com.sample.minigame" version="1.0.0" company="Company Name" />
+	<app main="Main" path="Export" file="MiniGame" />
+
+	<!-- 预处理好所有ZIP资源 -->
+	<prebuild haxe="tools.CreateExternalZip"/>
+
+	<source path="Source" />
+
+	<!-- 外部类，注意它并不会编译到最终代码中，仅使用LSP功能 -->
+	<source path="External" />
+
+	<haxelib name="zygameui" />
+
+	<haxelib name="hscript" />
+
+	<assets path="Assets" rename="assets" />
+
+
+</project>
