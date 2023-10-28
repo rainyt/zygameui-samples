@@ -17,6 +17,7 @@
 - TouchImageBatch-TouchEvent Tilemap批处理容器点击事件处理
 - CustomLoader 自定义加载器（加载JSON格式的精灵图）
 - HotUpdateCode 热更新代码处理
+- TimeLine 时间轴API的使用
 
 # 发展
 在`develop`目录下，包含了一些新的实现例子，为引擎促进性能。
