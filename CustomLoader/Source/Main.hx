@@ -1,5 +1,6 @@
 package;
 
+import motion.Actuate;
 import zygame.components.data.AnimationData;
 import zygame.components.ZAnimation;
 import zygame.components.ZImage;
@@ -39,6 +40,12 @@ class Main extends Start {
 				animate.play(99999);
 				animate.x = 300;
 				animate.y = 300;
+				// 添加事件
+				animate.timeline.addFrameScript(20, () -> {
+					Actuate.tween(animate, 0.3, {y: animate.y - 100}).onComplete(() -> {
+						Actuate.tween(animate, 0.3, {y: animate.y + 100});
+					});
+				});
 			}
 		});
 		ZBuilder.bindAssets(assets);
@@ -48,7 +55,7 @@ class Main extends Start {
 
 	override function onFrame() {
 		super.onFrame();
-		// if (animate != null)
-		// animate.x++;
+		if (animate != null)
+			animate.x++;
 	}
 }
