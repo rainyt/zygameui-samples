@@ -1,8 +1,6 @@
 package;
 
-import motion.Actuate;
 import zygame.mini.MiniEngine;
-import zygame.mini.MiniEngineScene;
 import zygame.core.Start;
 
 class Main extends Start {
