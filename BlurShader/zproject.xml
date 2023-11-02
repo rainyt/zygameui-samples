@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="BlurShader" package="com.sample.blurshader" version="1.0.0" company="Company Name" />
+	<app main="Main" path="Export" file="BlurShader" />
+	
+	<source path="Source" />
+	
+	<haxelib name="zygameui" />
+	
+	<assets path="Assets" rename="assets" />
+	
+</project>

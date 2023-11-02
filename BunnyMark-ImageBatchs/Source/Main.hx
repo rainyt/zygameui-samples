@@ -1,5 +1,7 @@
 package;
 
+import openfl.display.Bitmap;
+import openfl.display.BitmapData;
 import zygame.components.ZLabel;
 import zygame.display.batch.QuadsBatchs;
 import zygame.core.Start;
@@ -27,6 +29,8 @@ class Main extends Start {
 	 * 这是使用Sprite渲染ImageBatchs的类型，如果ImageBatchs本身不会动的情况下，可以使用它减少渲染损耗
 	 */
 	var batchSprite:QuadsBatchs;
+
+	var bitmapDisplay:Bitmap = new Bitmap();
 
 	public function new() {
 		super(1920, 1080, false);
@@ -57,6 +61,12 @@ class Main extends Start {
 		label.addEventListener(MouseEvent.CLICK, (e) -> {
 			// 拍照
 			batchSprite.drawImageBatch(this.tilemap);
+			//
+			var bitmap:BitmapData = new BitmapData(600, 600);
+			bitmap.draw(this.tilemap);
+			bitmapDisplay.bitmapData = bitmap;
+			this.addChild(bitmapDisplay);
+			bitmapDisplay.y = getStageHeight() / 2;
 		});
 
 		stage.addEventListener(MouseEvent.MOUSE_DOWN, stage_onMouseDown);
