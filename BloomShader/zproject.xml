@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="BloomShader" package="com.sample.bloomshader" version="1.0.0" company="Company Name" />
+	<app main="Main" path="Export" file="BloomShader" />
+	
+	<source path="Source" />
+	
+	<haxelib name="zygameui" />
+	
+	<assets path="Assets" rename="assets" />
+	
+</project>
