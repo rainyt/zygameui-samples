@@ -19,6 +19,7 @@
 - HotUpdateCode 热更新代码处理
 - TimeLine 时间轴API的使用
 - BlurShader 自定义高斯模糊着色器
+- MaskRender 遮罩功能例子
 
 # 发展
 在`develop`目录下，包含了一些新的实现例子，为引擎促进性能。
