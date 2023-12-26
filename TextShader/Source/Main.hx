@@ -12,7 +12,7 @@ class Main extends Start {
 
 	override function onInit() {
 		super.onInit();
-		stage.color = 0x453964;
+		// stage.color = 0x453964;
 		// 代码初始化入口
 		var text = new ZLabel();
 		this.addChild(text);
@@ -44,6 +44,20 @@ class Main extends Start {
 		text3.height = 300;
 		text3.setFontSize(90);
 		text3.y = 500;
+		// 描边
+		text3.stroke(0x0, 5);
+		text3.bold(2);
+		// 渐变色
+		text3.mixColor = new MixColorData(0xffffff, 0xefecb7);
+		text3.dataProvider = "小金猪";
+
+		var text3 = new ZLabel();
+		this.addChild(text3);
+		text3.width = 1080;
+		text3.height = 300;
+		text3.setFontSize(90);
+		text3.y = 650;
+		text3.x = 0;
 		// 描边
 		text3.stroke(0x0, 2);
 		// 渐变色
