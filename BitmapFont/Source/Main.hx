@@ -15,7 +15,8 @@ class Main extends Start {
 		super.onInit();
 		// 代码初始化入口
 		var assets = new ZAssets();
-		assets.loadTextures("assets/DebugAtlas.png", " asssets/DebugAtlas.xml");
+		assets.loadTextures("assets/DebugAtlas.png", " assets/DebugAtlas.xml");
+		assets.loadFnt("assets/font-export.png", " assets/font-export.xml");
 		assets.start((f) -> {
 			if (f == 1) {
 				onAtlasRender();
@@ -32,5 +33,12 @@ class Main extends Start {
 		zbitmapLabel.width = getStageWidth();
 		zbitmapLabel.dataProvider = "This is a BitmapFont render.\nYour luck number is 1234567890.";
 		zbitmapLabel.x = zbitmapLabel.y = 30;
+
+		var zbitmapLabel:ZBitmapLabel = new ZBitmapLabel(ZBuilder.getBaseTextureAtlas("font-export"));
+		this.addChild(zbitmapLabel);
+		zbitmapLabel.width = getStageWidth();
+		zbitmapLabel.dataProvider = "ABCDE123456";
+		zbitmapLabel.x = zbitmapLabel.y = 30;
+		zbitmapLabel.y = 300;
 	}
 }

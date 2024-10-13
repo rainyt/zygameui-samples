@@ -6,6 +6,7 @@
 	
 	<source path="Source" />
 	
+	<define name="spine3.8"/>
 	<haxelib name="zygameui" />
 	
 	<assets path="Assets" rename="assets" />

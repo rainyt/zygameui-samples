@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project><define name="zybuild"/><define name="html5-platform"/>
+<project><define name="debug"/><define name="zybuild"/><define name="html5-platform"/>
 	
 	<meta title="BitmapFont" package="com.sample.bitmapfont" version="1.0.0" company="Company Name"/>
 	<app main="Main" path="Export" file="BitmapFont"/>
 	
 	<source path="Source"/>
 	
+	<define name="spine3.8"/>
 	<haxelib name="zygameui"/>
 	
 	<assets path="Assets" rename="assets"/>
